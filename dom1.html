@@ -5,69 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        a,
-a:visited,
-a:active,
-a:focus {
-  color: #0091d9;
-  text-decoration: none;
-}
-
-a:hover,
-a:active,
-a:focus {
-  color: #ff6163;
-}
-
-.simple-slider-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-}
-
-.arrow {
-  font-size: 30px;
-}
-
-.slider {
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  margin: 0 10px;
-}
-
-.items {
-  display: flex;
-  position: relative;
-  color: #444;
-  font-size: 30px;
-  right: 0;
-  transition: right .3s;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: papayawhip;
-  box-sizing: border-box;
-  width: 100px;
-  height: 100px;
-  border: 1px solid #444;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-
-}
-    </style>
+    <link rel="stylesheet" href="./css/dom1.css">
 </head>
 <body>
      <div class="simple-slider-container">
@@ -86,41 +24,6 @@ li {
       </li>
       <a class="arrow" id="right" href="#">→</a>
     </div>
-    <script>
-        
-
-        
-const left = document.querySelector("#left");
-const right = document.querySelector("#right");
-const itemsList = document.querySelector("#items");
-const computedStyles = window.getComputedStyle(itemsList);
-const items = document.querySelectorAll(".item");
-
-const minRight = 0;
-const itemWidth = getComputedStyle(items[0]).width;
-const step = parseInt(itemWidth);
-const preShownItems = 300 / step;
-const maxRight = (items.length - preShownItems) * step;
-let currentRight = 0;
-
-itemsList.style.right = currentRight;
-
-right.addEventListener("click", e => {
-  e.preventDefault();
-  if (currentRight < maxRight) {
-    currentRight += step;
-    itemsList.style.right = `${currentRight}px`;
-  }
-})
-
-left.addEventListener("click", e => {
-  e.preventDefault();
-
-  if (currentRight > minRight) {
-    currentRight -= step;
-    itemsList.style.right = `${currentRight}px`;
-  }
-})
-    </script>
+    <script type="text/javascript" src="./js/dom1.js"></script>
 </body>
 </html>
